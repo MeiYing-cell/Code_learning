@@ -7,8 +7,8 @@ using namespace std;
 const int N = 110;
 typedef pair<int,int> PII;
 int n,m;
-int g[N][N], d[N][N];
-PII pre[N][N];
+int g[N][N], d[N][N];//存 地图，每一个点到起点的距离
+PII pre[N][N];//存前驱节点
 
 int bfs(){
     queue<PII> q;
@@ -30,25 +30,7 @@ int bfs(){
     }
     return d[n-1][m-1];
 }
-void print_path(){
-    stack                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <PII> path;
-    int x=n-1,y=m-1;
-    while (x||y)
-    {
-        path.push({x,y});
-        auto t = pre[x][y];
-        x = t.first, y = t.second;
-    }
-    path.push({0,0});
-    while (path.size())
-    {
-        auto t = path.top();
-        path.pop();
-        cout<<'('<<t.first<<','<<t.second<<')'<<endl;
-    }
-    
-    
-}
+
 int main(){
     cin >> n >> m;
     for(int i=0;i<n;i++){
