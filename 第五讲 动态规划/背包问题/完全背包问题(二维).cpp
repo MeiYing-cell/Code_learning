@@ -14,7 +14,7 @@ int main(){
         for(int j = 1; j <= m; j++){
             f[i][j] = f[i-1][j];
             if(j >= v[i]) 
-                f[i][j] = max(f[i][j], f[i][j-v[i]] + w[i]);
+                f[i][j] = max(f[i][j], f[i][j-v[i]] + w[i]);//已经是一优化版本
         }
     }
     cout << f[n][m];
